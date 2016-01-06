@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Properties>
+    <Property name="LOG_DIR">/logs</Property>
+    <Property name="ARCHIVE">/logs/archive</Property>
+    <Property name="PATTERN">%-5level %d [%t] %c:%M(%L): %m%n</Property>
+  </Properties>
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+       <PatternLayout pattern="${PATTERN}"/>
+    </Console>
+    <RollingFile name="RollingFile"
+                 fileName="${LOG_DIR}/db2-spark-example.log"
+                 filePattern="${ARCHIVE}/db2-spark-example.log.%d{yyyy-MM-dd-hh-mm}.gz">
+        <PatternLayout pattern="${PATTERN}"/>
+        <TimeBasedTriggeringPolicy/>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="all">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="RollingFile"/>
+    </Root>
+  </Loggers>
+</Configuration>
