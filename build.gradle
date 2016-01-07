@@ -20,7 +20,10 @@ repositories {
 }
 
 dependencies {
-  compile 'com.sparkjava:spark-core:2.1'
+  compile 'com.sparkjava:spark-core:2.1' // The framework
+  compile 'com.beust:jcommander:1.48' // Making CMD line params easy
+  compile 'org.projectlombok:lombok:1.16.6' // Getters and setters done
+  compile 'org.sql2o:sql2o:1.5.4'
   compile 'org.apache.commons:commons-lang3:3.3.2'
   compile 'org.apache.logging.log4j:log4j-api:2.2'
   compile 'org.apache.logging.log4j:log4j-core:2.2'
@@ -29,10 +32,32 @@ dependencies {
   compile fileTree(dir: 'libs', include: '*.jar')
 }
 
-task createWrapper(type: Wrapper) {
-  gradleVersion = '2.2.1'
+task runJar(dependsOn:jar) << {
+  javaexec {
+    main="-jar";
+    args = [
+        jar.archivePath,
+        "--service-port", "7654",
+        "--db-host", "192.168.50.4",
+        "--db-port", "50000",
+        "--database", "SAMPLE",
+        "--db-username", "db2inst1",
+        "--db-password", "password11"
+    ]
+  }
 }
 
-task runJar(dependsOn:jar) << {
-  javaexec { main="-jar"; args jar.archivePath }
+task runDevJar(dependsOn:jar) << {
+  javaexec {
+    main="-jar";
+    args = [
+        jar.archivePath,
+        "--service-port", "4567",
+        "--db-host", "localhost", 
+        "--db-port", "50000",
+        "--database", "SAMPLE",
+        "--db-username", "db2inst1",
+        "--db-password", "password11"
+    ]
+  }
 }

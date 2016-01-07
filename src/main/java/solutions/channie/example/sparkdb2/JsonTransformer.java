@@ -1,4 +1,4 @@
-package solutions.channie.example.sparkdb2.data;
+package solutions.channie.example.sparkdb2;
 
 import spark.ResponseTransformer;
 import com.google.gson.Gson;
