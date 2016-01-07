@@ -53,9 +53,8 @@ This can be run with your own instance of DB2, just update the params in the bui
 
   <http://localhost:7654/staff?name=Sanders>
 
-  Look here for data in the IBM sample database
-  
-   <https://www-01.ibm.com/support/knowledgecenter/SSEPGG_10.5.0/com.ibm.db2.luw.apdv.samptop.doc/doc/r0001094.html?cp=SSEPGG_10.5.0&lang=en>
+  Look here for example data in the [IBM sample database][IBM sample database]
+
 
 3.
   As this is using log4j you can watch the print out in the console.
@@ -66,3 +65,4 @@ This can be run with your own instance of DB2, just update the params in the bui
 [db2-dev-env page]:https://github.com/lendmeapound/db2-dev-env
 [Java Spark]:http://sparkjava.com/
 [IBM JDBC download page]:http://www-01.ibm.com/support/docview.wss?uid=swg21363866
+[IBM sample database]:https://www-01.ibm.com/support/knowledgecenter/SSEPGG_10.5.0/com.ibm.db2.luw.apdv.samptop.doc/doc/r0001094.html?cp=SSEPGG_10.5.0&lang=en
