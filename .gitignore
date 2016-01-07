@@ -1,0 +1,10 @@
+.gradle
+build/
+/bin
+/libs
+.settings
+.vagrant
+.project
+.classpath
+v10.5_linuxx64_expc.tar.gz
+/logs

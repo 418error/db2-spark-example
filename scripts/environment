@@ -1,0 +1,3 @@
+echo "Updating bash_profile with App Variables"
+printf "\n export DB2_CONN=jdbc:db2://127.0.0.1:50000 \nexport DB2_USER=db2inst1 \nexport DB2_PASS=password11" >> ~/.bash_profile
+source ~/.bash_profile
